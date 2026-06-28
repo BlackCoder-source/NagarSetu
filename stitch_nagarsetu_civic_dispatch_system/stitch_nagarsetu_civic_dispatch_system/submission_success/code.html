@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NagarSetu | Report Submitted</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=JetBrains+Mono:wght@100..900&display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Config -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-tint": "#565e74",
+            "primary-fixed": "#dae2fd",
+            "surface-variant": "#d3e4fe",
+            "on-primary-fixed": "#131b2e",
+            "tertiary-fixed": "#ffddb8",
+            "error-container": "#ffdad6",
+            "on-primary-fixed-variant": "#3f465c",
+            "surface-container-high": "#dce9ff",
+            "error": "#ba1a1a",
+            "surface-container": "#e5eeff",
+            "on-secondary-fixed-variant": "#004395",
+            "background": "#f8f9ff",
+            "surface-bright": "#f8f9ff",
+            "primary-container": "#131b2e",
+            "on-secondary": "#ffffff",
+            "tertiary": "#000000",
+            "surface": "#f8f9ff",
+            "inverse-on-surface": "#eaf1ff",
+            "surface-container-lowest": "#ffffff",
+            "on-secondary-fixed": "#001a42",
+            "primary": "#000000",
+            "on-tertiary-fixed": "#2a1700",
+            "secondary-fixed-dim": "#adc6ff",
+            "secondary-container": "#2170e4",
+            "surface-dim": "#cbdbf5",
+            "on-tertiary": "#ffffff",
+            "on-primary-container": "#7c839b",
+            "on-background": "#0b1c30",
+            "inverse-surface": "#213145",
+            "outline": "#76777d",
+            "tertiary-container": "#2a1700",
+            "surface-container-low": "#eff4ff",
+            "surface-container-highest": "#d3e4fe",
+            "on-surface-variant": "#45464d",
+            "secondary": "#0058be",
+            "tertiary-fixed-dim": "#ffb95f",
+            "on-error-container": "#93000a",
+            "secondary-fixed": "#d8e2ff",
+            "on-secondary-container": "#fefcff",
+            "inverse-primary": "#bec6e0",
+            "on-tertiary-fixed-variant": "#653e00",
+            "outline-variant": "#c6c6cd",
+            "primary-fixed-dim": "#bec6e0",
+            "on-error": "#ffffff",
+            "on-primary": "#ffffff",
+            "on-surface": "#0b1c30",
+            "on-tertiary-container": "#b87500"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "unit": "4px",
+            "margin-desktop": "32px",
+            "stack-sm": "8px",
+            "stack-lg": "24px",
+            "stack-md": "16px",
+            "gutter": "16px",
+            "margin-mobile": "16px"
+          },
+          "fontFamily": {
+            "title-md": ["Inter"],
+            "label-sm": ["JetBrains Mono"],
+            "headline-lg": ["Inter"],
+            "headline-lg-mobile": ["Inter"],
+            "headline-md": ["Inter"],
+            "display-lg": ["Inter"],
+            "label-md": ["JetBrains Mono"],
+            "body-md": ["Inter"],
+            "body-lg": ["Inter"]
+          },
+          "fontSize": {
+            "title-md": ["18px", { "lineHeight": "24px", "fontWeight": "600" }],
+            "label-sm": ["10px", { "lineHeight": "14px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+            "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+            "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+            "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+            "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    
+    @keyframes checkmark {
+      0% { transform: scale(0); opacity: 0; }
+      50% { transform: scale(1.1); opacity: 1; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+    
+    .animate-success-icon {
+      animation: checkmark 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    }
+
+    .pulse-glow {
+      box-shadow: 0 0 0 0 rgba(33, 112, 228, 0.4);
+      animation: pulse-glow 2s infinite;
+    }
+
+    @keyframes pulse-glow {
+      0% { box-shadow: 0 0 0 0 rgba(33, 112, 228, 0.4); }
+      70% { box-shadow: 0 0 0 15px rgba(33, 112, 228, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(33, 112, 228, 0); }
+    }
+  </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col items-center justify-center overflow-hidden">
+<!-- Success Background Atmosphere (Abstract) -->
+<div class="fixed inset-0 -z-10 opacity-10 pointer-events-none">
+<div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-secondary via-transparent to-surface-container-high"></div>
+</div>
+<!-- Main Content Canvas (Focused Journey - No Global Nav) -->
+<main class="w-full max-w-[1024px] px-margin-mobile md:px-margin-desktop py-stack-lg flex flex-col items-center">
+<!-- Success Feedback Cluster -->
+<div class="flex flex-col items-center text-center space-y-stack-md mb-stack-lg animate-in fade-in slide-in-from-bottom-4 duration-700">
+<div class="relative">
+<div class="w-24 h-24 md:w-32 md:h-32 bg-secondary-container text-on-secondary-container rounded-full flex items-center justify-center animate-success-icon">
+<span class="material-symbols-outlined text-[48px] md:text-[64px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<!-- Micro-interaction Sparkles -->
+<div class="absolute -top-2 -right-2 text-secondary animate-bounce duration-1000">
+<span class="material-symbols-outlined text-title-md">spark</span>
+</div>
+</div>
+<div class="space-y-stack-sm">
+<p class="font-label-sm text-label-sm text-secondary tracking-widest uppercase">Report ID: #NS-8921</p>
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary">Emergency Dispatch Notified</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-md mx-auto">
+          Your municipal incident report has been verified. Critical response protocols have been activated.
+        </p>
+</div>
+</div>
+<!-- Live Tracking Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter w-full animate-in fade-in slide-in-from-bottom-8 duration-700 delay-200">
+<!-- Tracking Map View (High Contrast, Tactical) -->
+<div class="md:col-span-8 relative bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden min-h-[320px] shadow-sm">
+<div class="absolute inset-0 z-0">
+<div class="w-full h-full bg-cover bg-center grayscale contrast-75 brightness-110" data-alt="A tactical, minimalist map interface showing a clean silver-gray urban grid of a modern city center. A blue officer icon and a red incident marker are clearly visible with a dashed blue line connecting them to represent a route. The aesthetic is clean, professional, and corporate with subtle data overlays." data-location="Mumbai" style="background-image: url('https://www.gstatic.com/labs-code/stitch/stitch-placeholder-300x300.svg')"></div>
+</div>
+<!-- Live Status Overlay -->
+<div class="absolute top-stack-md left-stack-md z-10">
+<div class="flex items-center gap-stack-sm bg-surface/90 backdrop-blur-md px-stack-md py-stack-sm rounded-lg border border-outline-variant shadow-sm">
+<span class="relative flex h-3 w-3">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-3 w-3 bg-secondary"></span>
+</span>
+<span class="font-label-md text-label-md text-primary font-bold uppercase">Officer En Route</span>
+</div>
+</div>
+<div class="absolute bottom-stack-md right-stack-md z-10 flex gap-stack-sm">
+<button class="w-10 h-10 bg-surface text-primary border border-outline-variant rounded-lg flex items-center justify-center hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined">zoom_in</span>
+</button>
+<button class="w-10 h-10 bg-surface text-primary border border-outline-variant rounded-lg flex items-center justify-center hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined">near_me</span>
+</button>
+</div>
+</div>
+<!-- ETA and Details Panel -->
+<div class="md:col-span-4 space-y-gutter">
+<!-- ETA Card -->
+<div class="bg-secondary-container text-on-secondary-container p-stack-lg rounded-xl flex flex-col justify-between h-[150px] shadow-sm">
+<div class="flex justify-between items-start">
+<span class="font-label-sm text-label-sm opacity-80 uppercase tracking-tighter">Estimated Arrival</span>
+<span class="material-symbols-outlined">schedule</span>
+</div>
+<div>
+<h2 class="font-display-lg text-display-lg font-black">4m 20s</h2>
+<p class="font-label-md text-label-md opacity-80">Traffic Conditions: Moderate</p>
+</div>
+</div>
+<!-- Dispatch Contact Card -->
+<div class="bg-surface border border-outline-variant p-stack-md rounded-xl space-y-stack-md shadow-sm">
+<div class="flex items-center gap-stack-md">
+<div class="w-12 h-12 rounded-full border-2 border-secondary overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of a municipal officer in a clean, navy blue response uniform, set against a neutral gray studio background. The lighting is soft and authoritative, conveying a sense of calm and competence in a corporate emergency context." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBTHf64dcH8O0MJZSlzoGFSQ4azHg4aoyGHT1cuWWDaqj6MFnCSk75qE1I50QScixql06ZyhmNVowEIh_7zQ2fToJhNa3qhplAxvesyI7XW1pZAcH9onDFK9d5pYVvT8tOU8ck0WL0t715iPCStpq6wNakLpBsVybjAcUozo0tb6xpil7USke0V8hPyMYvnonFPR5C7lubIhTQiLipaqPGJTKIRROiJiYnpY1WKvYbVPJ0DUfZqEQeVeqljp8rYiMlM6RxxVh3MiE"/>
+</div>
+<div>
+<p class="font-title-md text-title-md text-primary">Officer Sharma</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Unit #402 Dispatch</p>
+</div>
+</div>
+<div class="flex gap-stack-sm">
+<button class="flex-1 h-10 bg-surface border border-outline-variant text-secondary font-title-md text-title-md rounded-lg flex items-center justify-center gap-2 hover:bg-surface-container-low transition-all">
+<span class="material-symbols-outlined text-[20px]">call</span>
+<span>Contact</span>
+</button>
+<button class="w-10 h-10 bg-surface border border-outline-variant text-primary rounded-lg flex items-center justify-center hover:bg-surface-container-low transition-all">
+<span class="material-symbols-outlined">chat_bubble</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Predictive Feedback Panel (Contextual Intelligence) -->
+<div class="w-full mt-gutter animate-in fade-in slide-in-from-bottom-12 duration-700 delay-500">
+<div class="bg-[#FFFBEB] border-2 border-dashed border-tertiary-fixed-dim p-stack-md rounded-xl flex items-start gap-stack-md">
+<div class="bg-tertiary-fixed p-stack-sm rounded-lg text-on-tertiary-fixed">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">psychology</span>
+</div>
+<div class="flex-1">
+<h4 class="font-title-md text-title-md text-on-tertiary-fixed">AI Insight: Pre-emptive Coordination</h4>
+<p class="font-body-md text-body-md text-on-tertiary-fixed-variant">Based on historical data for this zone, two nearby units have been put on standby to ensure a 99% coverage rate for this incident type.</p>
+</div>
+</div>
+</div>
+<!-- Final CTA Area -->
+<div class="w-full flex flex-col sm:flex-row items-center justify-center gap-stack-md mt-stack-lg py-stack-md animate-in fade-in slide-in-from-bottom-16 duration-700 delay-700">
+<button class="w-full sm:w-64 h-12 bg-primary text-on-primary rounded-lg font-title-md text-title-md flex items-center justify-center gap-stack-sm hover:opacity-90 active:scale-95 transition-all shadow-md" onclick="location.href='#'">
+<span>Return Home</span>
+<span class="material-symbols-outlined">home</span>
+</button>
+<button class="w-full sm:w-64 h-12 bg-surface border border-outline-variant text-primary rounded-lg font-title-md text-title-md flex items-center justify-center gap-stack-sm hover:bg-surface-container-low transition-all">
+<span class="material-symbols-outlined">share</span>
+<span>Share Status</span>
+</button>
+</div>
+</main>
+<!-- Interaction Script for dynamic feel -->
+<script>
+    // Simple micro-interaction for the ETA timer
+    let time = 260; // 4m 20s
+    const timerDisplay = document.querySelector('h2');
+    
+    if(timerDisplay) {
+      setInterval(() => {
+        if(time > 0) {
+          time--;
+          const mins = Math.floor(time / 60);
+          const secs = time % 60;
+          timerDisplay.textContent = `${mins}m ${secs < 10 ? '0' : ''}${secs}s`;
+        }
+      }, 1000);
+    }
+
+    // Subtle parallax effect on map
+    document.addEventListener('mousemove', (e) => {
+      const map = document.querySelector('[data-location]');
+      if (map) {
+        const moveX = (e.clientX - window.innerWidth / 2) / 100;
+        const moveY = (e.clientY - window.innerHeight / 2) / 100;
+        map.style.transform = `scale(1.1) translate(${moveX}px, ${moveY}px)`;
+        map.style.transition = 'transform 0.1s ease-out';
+      }
+    });
+  </script>
+</body></html>
