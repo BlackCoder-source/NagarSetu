@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NagarSetu | Citizen Incident Report</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-tint": "#565e74",
+                    "primary-fixed": "#dae2fd",
+                    "surface-variant": "#d3e4fe",
+                    "on-primary-fixed": "#131b2e",
+                    "tertiary-fixed": "#ffddb8",
+                    "error-container": "#ffdad6",
+                    "on-primary-fixed-variant": "#3f465c",
+                    "surface-container-high": "#dce9ff",
+                    "error": "#ba1a1a",
+                    "surface-container": "#e5eeff",
+                    "on-secondary-fixed-variant": "#004395",
+                    "background": "#f8f9ff",
+                    "surface-bright": "#f8f9ff",
+                    "primary-container": "#131b2e",
+                    "on-secondary": "#ffffff",
+                    "tertiary": "#000000",
+                    "surface": "#f8f9ff",
+                    "inverse-on-surface": "#eaf1ff",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary-fixed": "#001a42",
+                    "primary": "#000000",
+                    "on-tertiary-fixed": "#2a1700",
+                    "secondary-fixed-dim": "#adc6ff",
+                    "secondary-container": "#2170e4",
+                    "surface-dim": "#cbdbf5",
+                    "on-tertiary": "#ffffff",
+                    "on-primary-container": "#7c839b",
+                    "on-background": "#0b1c30",
+                    "inverse-surface": "#213145",
+                    "outline": "#76777d",
+                    "tertiary-container": "#2a1700",
+                    "surface-container-low": "#eff4ff",
+                    "surface-container-highest": "#d3e4fe",
+                    "on-surface-variant": "#45464d",
+                    "secondary": "#0058be",
+                    "tertiary-fixed-dim": "#ffb95f",
+                    "on-error-container": "#93000a",
+                    "secondary-fixed": "#d8e2ff",
+                    "on-secondary-container": "#fefcff",
+                    "inverse-primary": "#bec6e0",
+                    "on-tertiary-fixed-variant": "#653e00",
+                    "outline-variant": "#c6c6cd",
+                    "primary-fixed-dim": "#bec6e0",
+                    "on-error": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "on-surface": "#0b1c30",
+                    "on-tertiary-container": "#b87500"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "unit": "4px",
+                    "margin-desktop": "32px",
+                    "stack-sm": "8px",
+                    "stack-lg": "24px",
+                    "stack-md": "16px",
+                    "gutter": "16px",
+                    "margin-mobile": "16px"
+            },
+            "fontFamily": {
+                    "title-md": ["Inter"],
+                    "label-sm": ["JetBrains Mono"],
+                    "headline-lg": ["Inter"],
+                    "headline-lg-mobile": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "display-lg": ["Inter"],
+                    "label-md": ["JetBrains Mono"],
+                    "body-md": ["Inter"],
+                    "body-lg": ["Inter"]
+            },
+            "fontSize": {
+                    "title-md": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+                    "label-sm": ["10px", {"lineHeight": "14px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #f8f9ff;
+            color: #0b1c30;
+            overflow-x: hidden;
+        }
+        .step-container {
+            display: none;
+        }
+        .step-container.active {
+            display: block;
+            animation: fadeIn 0.4s ease-out forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .progress-line {
+            transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .tactical-border {
+            border-left: 4px solid transparent;
+        }
+        .tactical-border-active {
+            border-left: 4px solid #0058be;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="font-body-md text-body-md antialiased">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-margin-desktop h-16 bg-surface dark:bg-surface-dim border-b border-outline-variant dark:border-outline shadow-sm">
+<div class="flex items-center gap-stack-md">
+<span class="font-headline-md text-headline-md font-bold text-secondary dark:text-secondary-fixed">NagarSetu</span>
+<div class="hidden md:block h-6 w-px bg-outline-variant mx-4"></div>
+<span class="hidden md:block font-label-md text-label-md text-on-surface-variant">Citizen Response Portal</span>
+</div>
+<div class="flex items-center gap-stack-lg">
+<button class="material-symbols-outlined text-on-surface-variant hover:bg-surface-container-low transition-colors p-2 rounded-full">notifications</button>
+<button class="bg-primary text-on-primary font-title-md text-title-md px-6 py-2 rounded-lg hover:opacity-80 active:scale-[0.98] transition-all">Emergency Dispatch</button>
+</div>
+</header>
+<main class="pt-24 pb-12 px-margin-mobile md:px-margin-desktop max-w-[1200px] mx-auto min-h-screen">
+<!-- Stepper Header -->
+<div class="mb-12">
+<div class="flex justify-between items-end mb-4">
+<div>
+<h1 class="font-headline-lg text-headline-lg text-primary mb-1">Report an Incident</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Your submission directly alerts municipal response teams.</p>
+</div>
+<div class="text-right">
+<span class="font-label-md text-label-md text-secondary-container font-bold" id="step-indicator">STEP 1 OF 3</span>
+</div>
+</div>
+<!-- Progress Bar -->
+<div class="w-full h-2 bg-surface-container rounded-full overflow-hidden">
+<div class="progress-line h-full bg-secondary w-1/3" id="progress-bar"></div>
+</div>
+</div>
+<form id="incident-form">
+<!-- STEP 1: Category Selection -->
+<div class="step-container active" id="step-1">
+<h2 class="font-title-md text-title-md mb-stack-lg">Select Incident Category</h2>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-gutter">
+<!-- Category Card -->
+<button class="category-btn flex flex-col items-center justify-center p-stack-lg bg-surface-container-lowest border border-outline-variant rounded-xl hover:bg-surface-container-high transition-all active:scale-[0.98] group" onclick="selectCategory('fire', this)" type="button">
+<span class="material-symbols-outlined text-[48px] text-error mb-4 group-hover:scale-110 transition-transform">fire_truck</span>
+<span class="font-title-md text-title-md">Fire</span>
+</button>
+<!-- Category Card -->
+<button class="category-btn flex flex-col items-center justify-center p-stack-lg bg-surface-container-lowest border border-outline-variant rounded-xl hover:bg-surface-container-high transition-all active:scale-[0.98] group" onclick="selectCategory('water', this)" type="button">
+<span class="material-symbols-outlined text-[48px] text-secondary mb-4 group-hover:scale-110 transition-transform">water_drop</span>
+<span class="font-title-md text-title-md">Water Leak</span>
+</button>
+<!-- Category Card -->
+<button class="category-btn flex flex-col items-center justify-center p-stack-lg bg-surface-container-lowest border border-outline-variant rounded-xl hover:bg-surface-container-high transition-all active:scale-[0.98] group" onclick="selectCategory('road', this)" type="button">
+<span class="material-symbols-outlined text-[48px] text-on-surface mb-4 group-hover:scale-110 transition-transform">construction</span>
+<span class="font-title-md text-title-md">Road/Pothole</span>
+</button>
+<!-- Category Card -->
+<button class="category-btn flex flex-col items-center justify-center p-stack-lg bg-surface-container-lowest border border-outline-variant rounded-xl hover:bg-surface-container-high transition-all active:scale-[0.98] group" onclick="selectCategory('power', this)" type="button">
+<span class="material-symbols-outlined text-[48px] text-on-tertiary-container mb-4 group-hover:scale-110 transition-transform">bolt</span>
+<span class="font-title-md text-title-md">Power Outage</span>
+</button>
+<!-- Category Card -->
+<button class="category-btn flex flex-col items-center justify-center p-stack-lg bg-surface-container-lowest border border-outline-variant rounded-xl hover:bg-surface-container-high transition-all active:scale-[0.98] group" onclick="selectCategory('waste', this)" type="button">
+<span class="material-symbols-outlined text-[48px] text-on-primary-fixed-variant mb-4 group-hover:scale-110 transition-transform">delete</span>
+<span class="font-title-md text-title-md">Waste/Sanitation</span>
+</button>
+<!-- Category Card -->
+<button class="category-btn flex flex-col items-center justify-center p-stack-lg bg-surface-container-lowest border border-outline-variant rounded-xl hover:bg-surface-container-high transition-all active:scale-[0.98] group" onclick="selectCategory('traffic', this)" type="button">
+<span class="material-symbols-outlined text-[48px] text-error mb-4 group-hover:scale-110 transition-transform">traffic</span>
+<span class="font-title-md text-title-md">Traffic</span>
+</button>
+<!-- Category Card -->
+<button class="category-btn flex flex-col items-center justify-center p-stack-lg bg-surface-container-lowest border border-outline-variant rounded-xl hover:bg-surface-container-high transition-all active:scale-[0.98] group" onclick="selectCategory('safety', this)" type="button">
+<span class="material-symbols-outlined text-[48px] text-on-secondary-fixed-variant mb-4 group-hover:scale-110 transition-transform">local_police</span>
+<span class="font-title-md text-title-md">Public Safety</span>
+</button>
+<!-- Category Card -->
+<button class="category-btn flex flex-col items-center justify-center p-stack-lg bg-surface-container-lowest border border-outline-variant rounded-xl hover:bg-surface-container-high transition-all active:scale-[0.98] group" onclick="selectCategory('other', this)" type="button">
+<span class="material-symbols-outlined text-[48px] text-outline mb-4 group-hover:scale-110 transition-transform">more_horiz</span>
+<span class="font-title-md text-title-md">Other</span>
+</button>
+</div>
+<div class="mt-12 flex justify-end">
+<button class="bg-primary text-on-primary px-10 py-4 rounded-lg font-title-md text-title-md flex items-center gap-2 opacity-50 cursor-not-allowed transition-all" disabled="" id="btn-next-1" onclick="nextStep(2)" type="button">
+                        Next: Details
+                        <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- STEP 2: Location and Details -->
+<div class="step-container" id="step-2">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-stack-lg">
+<!-- Left Column: Map and Inputs -->
+<div class="space-y-stack-lg">
+<div>
+<label class="font-label-sm text-label-sm text-on-surface-variant block mb-2">PICK LOCATION ON MAP</label>
+<div class="relative w-full h-80 rounded-xl overflow-hidden border border-outline-variant shadow-sm">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="A detailed, muted silver-toned map of a modern urban city district with clean lines and soft blue accents. The map shows grid-like streets and a centered red location pin marker. The visual style is professional, tactical, and clean, aligned with a corporate governance software aesthetic." data-location="New Delhi, India" style="background-image: url('https://www.gstatic.com/labs-code/stitch/stitch-placeholder-300x300.svg')"></div>
+<div class="absolute top-4 left-4 z-10">
+<div class="bg-surface p-2 rounded shadow-md border border-outline-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary">location_on</span>
+<span class="font-body-md text-body-md font-medium">Pin dropped at Central Sector</span>
+</div>
+</div>
+</div>
+</div>
+<div>
+<label class="font-label-sm text-label-sm text-on-surface-variant block mb-2">INCIDENT DESCRIPTION</label>
+<textarea class="w-full min-h-[120px] bg-white border border-slate-200 rounded-lg p-4 font-body-md text-body-md focus:border-secondary focus:ring-1 focus:ring-secondary transition-all outline-none" placeholder="Please provide specific details about the situation..."></textarea>
+</div>
+</div>
+<!-- Right Column: Photo Upload and Details -->
+<div class="space-y-stack-lg">
+<div>
+<label class="font-label-sm text-label-sm text-on-surface-variant block mb-2">UPLOAD EVIDENCE (PHOTOS)</label>
+<div class="border-2 border-dashed border-outline-variant rounded-xl p-stack-lg flex flex-col items-center justify-center bg-surface-container-low hover:bg-surface-container hover:border-secondary transition-all cursor-pointer">
+<span class="material-symbols-outlined text-[48px] text-outline mb-4">cloud_upload</span>
+<p class="font-title-md text-title-md">Tap to upload photos</p>
+<p class="font-body-md text-body-md text-on-surface-variant">PNG, JPG up to 10MB each</p>
+<input class="hidden" type="file"/>
+</div>
+</div>
+<div>
+<label class="font-label-sm text-label-sm text-on-surface-variant block mb-2">SEVERITY LEVEL</label>
+<div class="grid grid-cols-3 gap-2">
+<button class="p-4 border border-outline-variant rounded-lg flex flex-col items-center hover:bg-surface-container-high transition-colors" type="button">
+<span class="w-4 h-4 rounded-full bg-green-500 mb-2"></span>
+<span class="font-label-md text-label-md">LOW</span>
+</button>
+<button class="p-4 border border-secondary bg-secondary-container rounded-lg flex flex-col items-center" type="button">
+<span class="w-4 h-4 rounded-full bg-amber-500 mb-2"></span>
+<span class="font-label-md text-label-md text-on-secondary-container">MEDIUM</span>
+</button>
+<button class="p-4 border border-outline-variant rounded-lg flex flex-col items-center hover:bg-surface-container-high transition-colors" type="button">
+<span class="w-4 h-4 rounded-full bg-red-600 mb-2"></span>
+<span class="font-label-md text-label-md">CRITICAL</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-12 flex justify-between">
+<button class="border border-outline text-on-surface-variant px-8 py-4 rounded-lg font-title-md text-title-md flex items-center gap-2 hover:bg-surface-container-low transition-all" onclick="nextStep(1)" type="button">
+<span class="material-symbols-outlined">arrow_back</span>
+                        Back
+                    </button>
+<button class="bg-primary text-on-primary px-10 py-4 rounded-lg font-title-md text-title-md flex items-center gap-2 hover:opacity-90 transition-all" onclick="nextStep(3)" type="button">
+                        Next: Review
+                        <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- STEP 3: Review and Contact -->
+<div class="step-container" id="step-3">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-stack-lg">
+<!-- Left: Summary Card -->
+<div class="bg-white border border-outline-variant rounded-xl overflow-hidden shadow-sm">
+<div class="bg-surface-container-high p-stack-md border-b border-outline-variant flex justify-between items-center">
+<span class="font-label-md text-label-md text-secondary font-bold">REPORT SUMMARY</span>
+<span class="bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-xs font-bold">MEDIUM SEVERITY</span>
+</div>
+<div class="p-stack-lg space-y-stack-md">
+<div class="flex items-start gap-4 p-4 bg-surface-container-low rounded-lg border-l-4 border-secondary">
+<span class="material-symbols-outlined text-secondary">water_drop</span>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">CATEGORY</p>
+<p class="font-title-md text-title-md">Water Leak</p>
+</div>
+</div>
+<div class="flex items-start gap-4 p-4 border-b border-outline-variant">
+<span class="material-symbols-outlined text-on-surface-variant">location_on</span>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">LOCATION</p>
+<p class="font-body-md text-body-md">Sector 12, Main Plaza near Central Library</p>
+</div>
+</div>
+<div class="flex items-start gap-4 p-4 border-b border-outline-variant">
+<span class="material-symbols-outlined text-on-surface-variant">notes</span>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">DESCRIPTION</p>
+<p class="font-body-md text-body-md italic text-on-surface">"Significant water gushing from underground pipe. Pavement starting to crack. Affecting traffic flow."</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Right: Contact Details -->
+<div class="bg-white border border-outline-variant rounded-xl p-stack-lg shadow-sm">
+<h3 class="font-title-md text-title-md mb-stack-lg flex items-center gap-2">
+<span class="material-symbols-outlined">person</span>
+                            Reporter Details
+                        </h3>
+<div class="space-y-stack-md">
+<div>
+<label class="font-label-sm text-label-sm text-on-surface-variant block mb-1">FULL NAME</label>
+<input class="w-full bg-surface-container-low border border-slate-200 rounded-lg p-3 font-body-md text-body-md focus:border-secondary outline-none" placeholder="John Doe" type="text"/>
+</div>
+<div>
+<label class="font-label-sm text-label-sm text-on-surface-variant block mb-1">MOBILE NUMBER</label>
+<input class="w-full bg-surface-container-low border border-slate-200 rounded-lg p-3 font-body-md text-body-md focus:border-secondary outline-none" placeholder="+91 98765-43210" type="tel"/>
+</div>
+<div class="pt-4">
+<label class="flex items-center gap-3 cursor-pointer">
+<input class="w-5 h-5 rounded border-slate-300 text-secondary focus:ring-secondary" type="checkbox"/>
+<span class="font-body-md text-body-md">Receive SMS updates for this report</span>
+</label>
+</div>
+</div>
+<div class="mt-8 p-4 bg-primary-container text-on-primary-fixed rounded-lg border border-primary-fixed/20">
+<div class="flex gap-3">
+<span class="material-symbols-outlined text-amber-400">info</span>
+<p class="text-xs font-label-md">Privacy: Your contact details are only shared with municipal dispatchers and won't be made public.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-12 flex justify-between">
+<button class="border border-outline text-on-surface-variant px-8 py-4 rounded-lg font-title-md text-title-md flex items-center gap-2 hover:bg-surface-container-low transition-all" onclick="nextStep(2)" type="button">
+<span class="material-symbols-outlined">arrow_back</span>
+                        Back
+                    </button>
+<button class="bg-secondary text-on-secondary px-12 py-4 rounded-lg font-headline-md text-headline-md font-bold flex items-center gap-3 shadow-lg shadow-secondary/20 hover:scale-[1.02] active:scale-[0.98] transition-all" onclick="submitReport()" type="button">
+                        SUBMIT REPORT
+                        <span class="material-symbols-outlined">send</span>
+</button>
+</div>
+</div>
+<!-- SUCCESS OVERLAY (Hidden by default) -->
+<div class="hidden fixed inset-0 z-[100] bg-primary-container/95 flex items-center justify-center p-6 text-center" id="success-screen">
+<div class="bg-white max-w-lg w-full rounded-2xl p-stack-lg shadow-2xl scale-in transform transition-all duration-500">
+<div class="w-20 h-20 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
+<span class="material-symbols-outlined text-[48px]">check_circle</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg mb-2">Report Submitted!</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8">Incident ID: <strong>#SETU-9421-K</strong>. Our teams have been notified and are reviewing the dispatch priorities.</p>
+<div class="space-y-4">
+<button class="w-full bg-primary text-on-primary py-4 rounded-xl font-title-md text-title-md" onclick="window.location.reload()" type="button">Go to Dashboard</button>
+<button class="w-full border border-outline py-4 rounded-xl font-title-md text-title-md" onclick="window.location.reload()" type="button">Submit Another Report</button>
+</div>
+</div>
+</div>
+</form>
+</main>
+<footer class="mt-12 border-t border-outline-variant py-8 px-margin-desktop">
+<div class="max-w-[1200px] mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-on-surface-variant font-label-md text-label-md">
+<span>© 2024 NagarSetu Municipal Platform</span>
+<div class="flex gap-stack-lg">
+<a class="hover:text-secondary" href="#">Privacy Policy</a>
+<a class="hover:text-secondary" href="#">Terms of Service</a>
+<a class="hover:text-secondary" href="#">Accessibility</a>
+</div>
+</div>
+</footer>
+<script>
+        let selectedCategoryCode = null;
+
+        function selectCategory(category, element) {
+            // Remove active styles from all buttons
+            document.querySelectorAll('.category-btn').forEach(btn => {
+                btn.classList.remove('bg-secondary-container', 'border-secondary', 'text-on-secondary-container');
+                btn.classList.add('bg-surface-container-lowest', 'border-outline-variant');
+            });
+
+            // Add active styles to clicked button
+            element.classList.remove('bg-surface-container-lowest', 'border-outline-variant');
+            element.classList.add('bg-secondary-container', 'border-secondary', 'text-on-secondary-container');
+            
+            selectedCategoryCode = category;
+            
+            // Enable next button
+            const nextBtn = document.getElementById('btn-next-1');
+            nextBtn.disabled = false;
+            nextBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+            nextBtn.classList.add('hover:opacity-90');
+        }
+
+        function nextStep(step) {
+            // Hide all steps
+            document.querySelectorAll('.step-container').forEach(el => el.classList.remove('active'));
+            
+            // Show target step
+            document.getElementById(`step-${step}`).classList.add('active');
+            
+            // Update Progress Bar
+            const progress = document.getElementById('progress-bar');
+            const indicator = document.getElementById('step-indicator');
+            
+            if (step === 1) {
+                progress.style.width = '33%';
+                indicator.innerText = 'STEP 1 OF 3';
+            } else if (step === 2) {
+                progress.style.width = '66%';
+                indicator.innerText = 'STEP 2 OF 3';
+            } else if (step === 3) {
+                progress.style.width = '100%';
+                indicator.innerText = 'STEP 3 OF 3';
+            }
+
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function submitReport() {
+            document.getElementById('success-screen').classList.remove('hidden');
+        }
+    </script>
+</body></html>

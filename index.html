@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NagarSetu | Command Operations Center</title>
+  <!-- Material Symbols for premium icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
+  <!-- Custom design stylesheet -->
+  <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+
+  <div class="app-container">
+    <!-- Header -->
+    <header>
+      <div class="brand">
+        <div class="brand-logo">NagarSetu <span>// OPS</span></div>
+        <div class="status-badge">
+          <div class="status-dot"></div>
+          Operations Online
+        </div>
+      </div>
+      <div class="system-stats">
+        <div class="stat-item">
+          <span class="stat-label">Active Incidents</span>
+          <span class="stat-value" id="active-incidents">12</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">Active Responders</span>
+          <span class="stat-value">14 Units</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">ML Prediction Status</span>
+          <span class="stat-value" style="color: var(--accent-cyan-light)">OPTIMAL</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Dashboard Section -->
+    <main class="main-dashboard">
+      <div class="intro-panel">
+        <h2>Tactical Operations Hub</h2>
+        <p>Welcome to NagarSetu, the modern civic dispatch & predictive management platform. Navigate through public interfaces, field operations consoles, supervisor dashboards, and predictive modules using the matrix launcher below.</p>
+      </div>
+
+      <div class="info-section">
+        <span class="material-symbols-outlined info-section-icon">info</span>
+        <div class="info-section-content">
+          <h4>Tactical Professionalism Design Language</h4>
+          <p>NagarSetu leverages an authoritative design system combining high-contrast indicators, a silver-toned mapping structure, and predictive warning tiles. Each sub-interface is optimized for rapid cognitive processing under pressure.</p>
+        </div>
+      </div>
+
+      <!-- Modules Matrix -->
+      <div class="module-matrix">
+        
+        <!-- Module 1: Citizen Report Flow -->
+        <div class="module-card">
+          <div>
+            <div class="module-meta">
+              <div class="module-icon">
+                <span class="material-symbols-outlined">report_problem</span>
+              </div>
+              <span class="module-badge badge-public">Public Portal</span>
+            </div>
+            <div class="module-details">
+              <h3 class="module-title">Citizen Incident Report</h3>
+              <p class="module-desc">A guided reporting flow for citizens to submit hazards (road potholes, water leaks, public safety concerns) with automated photo evidence uploading, location pinning, and severity configuration.</p>
+            </div>
+          </div>
+          <a href="./stitch_nagarsetu_civic_dispatch_system/citizen_report_flow/code.html" class="launch-btn">
+            Launch Portal
+            <span class="material-symbols-outlined">arrow_forward</span>
+          </a>
+        </div>
+
+        <!-- Module 2: Submission Success -->
+        <div class="module-card">
+          <div>
+            <div class="module-meta">
+              <div class="module-icon">
+                <span class="material-symbols-outlined">check_circle</span>
+              </div>
+              <span class="module-badge badge-public">User Flow</span>
+            </div>
+            <div class="module-details">
+              <h3 class="module-title">Submission Success</h3>
+              <p class="module-desc">The citizen feedback portal rendered after submitting a report. It generates a unique civic dispatch case ID, alerts response teams, and presents confirmation options to follow ticket progress.</p>
+            </div>
+          </div>
+          <a href="./stitch_nagarsetu_civic_dispatch_system/submission_success/code.html" class="launch-btn">
+            Launch Flow
+            <span class="material-symbols-outlined">arrow_forward</span>
+          </a>
+        </div>
+
+        <!-- Module 3: Supervisor Dispatch -->
+        <div class="module-card">
+          <div>
+            <div class="module-meta">
+              <div class="module-icon">
+                <span class="material-symbols-outlined">emergency</span>
+              </div>
+              <span class="module-badge badge-dispatch">Command Center</span>
+            </div>
+            <div class="module-details">
+              <h3 class="module-title">Supervisor Dispatch</h3>
+              <p class="module-desc">A multi-pane supervisor interface listing incoming civic tickets, tracking nearby active dispatch units, and suggesting AI-generated incident response plans based on location and proximity.</p>
+            </div>
+          </div>
+          <a href="./stitch_nagarsetu_civic_dispatch_system/supervisor_dispatch/code.html" class="launch-btn">
+            Launch Console
+            <span class="material-symbols-outlined">arrow_forward</span>
+          </a>
+        </div>
+
+        <!-- Module 4: Officer Map View -->
+        <div class="module-card">
+          <div>
+            <div class="module-meta">
+              <div class="module-icon">
+                <span class="material-symbols-outlined">map</span>
+              </div>
+              <span class="module-badge badge-field">Field Deployment</span>
+            </div>
+            <div class="module-details">
+              <h3 class="module-title">Officer Map View</h3>
+              <p class="module-desc">Mobile-responsive field operator application featuring GPS routing alerts, turn-by-turn instruction widgets, response SLA timers, and a one-tap backup dispatch utility.</p>
+            </div>
+          </div>
+          <a href="./stitch_nagarsetu_civic_dispatch_system/officer_map_view/code.html" class="launch-btn">
+            Launch Interface
+            <span class="material-symbols-outlined">arrow_forward</span>
+          </a>
+        </div>
+
+        <!-- Module 5: Predictive Analytics -->
+        <div class="module-card">
+          <div>
+            <div class="module-meta">
+              <div class="module-icon">
+                <span class="material-symbols-outlined">psychology</span>
+              </div>
+              <span class="module-badge badge-ml">Predictive Engine</span>
+            </div>
+            <div class="module-details">
+              <h3 class="module-title">Predictive Dashboard</h3>
+              <p class="module-desc">Statistical analytics dashboard forecasting municipal threat scores, utility strain, and incident volumes. Suggests preemptive resource reallocations based on historical ML trends.</p>
+            </div>
+          </div>
+          <a href="./stitch_nagarsetu_civic_dispatch_system/predict_dashboard/code.html" class="launch-btn">
+            Launch Engine
+            <span class="material-symbols-outlined">arrow_forward</span>
+          </a>
+        </div>
+
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <span>© 2026 NagarSetu Systems. Designed for Municipal Governance.</span>
+      <div class="footer-links">
+        <a href="./stitch_nagarsetu_civic_dispatch_system/tactical_governance/DESIGN.md">Design Guidelines</a>
+        <a href="#">Support Hub</a>
+        <a href="https://github.com/BlackCoder-source/NagarSetu">GitHub Repository</a>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // Micro-interactions: update incident counters dynamically to feel alive
+    setInterval(() => {
+      const activeIncidents = document.getElementById('active-incidents');
+      if (activeIncidents) {
+        const change = Math.random() > 0.7 ? (Math.random() > 0.5 ? 1 : -1) : 0;
+        let val = parseInt(activeIncidents.innerText) + change;
+        if (val < 5) val = 5;
+        if (val > 25) val = 25;
+        activeIncidents.innerText = val;
+      }
+    }, 4000);
+  </script>
+</body>
+</html>
